@@ -21,7 +21,7 @@ import StudentNotifications from "./pages/student/StudentNotifications";
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/StudyShelf">
       <Routes>
 
         <Route path="/" element={<Home />} />
