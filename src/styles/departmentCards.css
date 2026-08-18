@@ -1,0 +1,139 @@
+.department-section {
+    width: 100%;
+    padding: 20px 0;
+    background-color: rgb(240, 240, 240);
+}
+
+.department-section h2 {
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 28px;
+}
+
+/* Grid */
+.department-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    justify-items: center;
+}
+
+/* Main Card */
+.department-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
+    width: 260px;
+    min-height: 190px;
+
+    border-radius: 24px;
+    cursor: pointer;
+
+    transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* Main Content */
+
+
+/* Blue middle layer */
+.department-card::after {
+    position: absolute;
+    content: "";
+
+    top: -8px;
+    left: 50%;
+
+    width: 80%;
+    height: 80%;
+
+    transform: translateX(-50%);
+
+    background: #fefefe;
+
+    border-radius: 24px;
+
+    z-index: -1;
+
+    transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* Actual card content */
+.department-card {
+    background: #0a3cff;
+    color: white;
+    padding: 28px;
+    box-sizing: border-box;
+}
+
+/* Icon */
+.dept-icon {
+    font-size: 42px;
+    margin-bottom: 12px;
+}
+
+/* Department name */
+.department-card h3 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+/* PDF count */
+.department-card p {
+    margin: 8px 0 0;
+    font-size: 16px;
+    opacity: 0.9;
+}
+
+/* Hover */
+.department-card:hover {
+    transform: translateY(-12px);
+}
+/* Hover: text + icon become black */
+.department-card:hover .dept-icon,
+.department-card:hover h3,
+.department-card:hover p {
+    color: #000000;
+}
+
+.department-card:hover::before {
+    transform: rotate(8deg);
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.department-card:hover::after {
+    transform: translateX(-50%) rotate(-8deg);
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+/* ========================= */
+/* Responsive */
+/* ========================= */
+
+@media (max-width: 900px) {
+
+    .department-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .department-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .department-card {
+        width: 280px;
+    }
+
+}

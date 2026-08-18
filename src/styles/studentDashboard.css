@@ -1,0 +1,843 @@
+/* =========================================================
+   CAMPUSDOCS - STUDENT DASHBOARD
+========================================================= */
+
+.student-dashboard {
+    min-height: 100vh;
+    background: #f7fafc;
+    color: #0a2540;
+}
+
+
+/* =========================================================
+   MAIN DASHBOARD AREA
+========================================================= */
+
+.student-dashboard .dashboard-content {
+    width: min(1400px, calc(100% - 80px));
+    margin: 0 auto;
+    padding: 35px 0 70px;
+}
+
+
+/* =========================================================
+   MATERIAL SECTION
+========================================================= */
+
+.student-dashboard .materials-section {
+    margin-top: 42px;
+    width: 100%;
+}
+
+
+/* =========================================================
+   MATERIAL HEADER
+========================================================= */
+
+.student-dashboard .materials-header {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 25px;
+
+    margin-bottom: 24px;
+}
+
+
+/* Small heading */
+
+.student-dashboard .section-label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #3a0ca3;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+}
+
+
+/* Main heading */
+
+.student-dashboard .materials-header h1 {
+    margin: 0;
+
+    color: #0a2540;
+
+    font-size: 30px;
+    line-height: 1.2;
+
+    font-weight: 800;
+
+    letter-spacing: -0.7px;
+}
+
+
+/* Description */
+
+.student-dashboard .materials-header p {
+    margin: 7px 0 0;
+
+    color: #64748b;
+
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   MATERIAL COUNT
+========================================================= */
+
+.student-dashboard .material-count {
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    padding: 10px 16px;
+
+    background: #ffffff;
+
+    border: 1px solid #e8e5f5;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 5px 18px rgba(10, 37, 64, 0.05);
+}
+
+.student-dashboard .material-count strong {
+    color: #3a0ca3;
+
+    font-size: 19px;
+    font-weight: 800;
+}
+
+.student-dashboard .material-count span {
+    color: #64748b;
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   MATERIAL GRID
+========================================================= */
+
+.student-dashboard .materials-container {
+
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 22px;
+
+    align-items: stretch;
+}
+
+
+/*
+   IMPORTANT:
+   Prevent MaterialCard from stretching outside
+   the grid or causing horizontal overflow.
+*/
+
+.student-dashboard .materials-container > * {
+    min-width: 0;
+    max-width: 100%;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   MATERIAL CARD ANIMATION
+========================================================= */
+
+.student-dashboard .materials-container > * {
+    animation: materialCardAppear 0.45s ease both;
+}
+
+.student-dashboard .materials-container > *:nth-child(1) {
+    animation-delay: 0.03s;
+}
+
+.student-dashboard .materials-container > *:nth-child(2) {
+    animation-delay: 0.06s;
+}
+
+.student-dashboard .materials-container > *:nth-child(3) {
+    animation-delay: 0.09s;
+}
+
+.student-dashboard .materials-container > *:nth-child(4) {
+    animation-delay: 0.12s;
+}
+
+.student-dashboard .materials-container > *:nth-child(5) {
+    animation-delay: 0.15s;
+}
+
+.student-dashboard .materials-container > *:nth-child(6) {
+    animation-delay: 0.18s;
+}
+
+
+@keyframes materialCardAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================================================
+   EMPTY MATERIAL STATE
+========================================================= */
+
+.student-dashboard .no-materials {
+
+    grid-column: 1 / -1;
+
+    width: 100%;
+    min-height: 300px;
+
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 40px;
+
+    background: #ffffff;
+
+    border: 1px dashed #cbd5e1;
+
+    border-radius: 18px;
+
+    text-align: center;
+}
+
+
+/* Empty icon */
+
+.student-dashboard .empty-icon {
+
+    width: 68px;
+    height: 68px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 16px;
+
+    background: #eee9ff;
+
+    border-radius: 18px;
+
+    font-size: 30px;
+}
+
+
+/* Empty heading */
+
+.student-dashboard .no-materials h2 {
+
+    margin: 0;
+
+    color: #0a2540;
+
+    font-size: 20px;
+    font-weight: 750;
+}
+
+
+/* Empty description */
+
+.student-dashboard .no-materials p {
+
+    max-width: 420px;
+
+    margin: 8px 0 0;
+
+    color: #64748b;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   LARGE TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .student-dashboard .dashboard-content {
+        width: min(100% - 50px, 950px);
+    }
+
+    .student-dashboard .materials-container {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 20px;
+    }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .student-dashboard .dashboard-content {
+
+        width: calc(100% - 32px);
+
+        padding-top: 28px;
+        padding-bottom: 50px;
+    }
+
+
+    .student-dashboard .materials-section {
+        margin-top: 32px;
+    }
+
+
+    .student-dashboard .materials-header {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 14px;
+    }
+
+
+    .student-dashboard .material-count {
+
+        align-self: flex-start;
+    }
+
+
+    .student-dashboard .materials-header h1 {
+        font-size: 27px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .student-dashboard .dashboard-content {
+
+        width: calc(100% - 24px);
+
+        padding-top: 22px;
+    }
+
+
+    .student-dashboard .materials-container {
+
+        grid-template-columns: 1fr;
+
+        gap: 16px;
+    }
+
+
+    .student-dashboard .materials-header {
+        margin-bottom: 18px;
+    }
+
+
+    .student-dashboard .materials-header h1 {
+        font-size: 24px;
+    }
+
+
+    .student-dashboard .materials-header p {
+        font-size: 13px;
+    }
+
+
+    .student-dashboard .material-count {
+
+        padding: 8px 13px;
+    }
+
+
+    .student-dashboard .material-count strong {
+        font-size: 17px;
+    }
+
+
+    .student-dashboard .no-materials {
+
+        min-height: 250px;
+
+        padding: 30px 20px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .student-dashboard .dashboard-content {
+
+        width: calc(100% - 20px);
+    }
+
+
+    .student-dashboard .materials-header h1 {
+        font-size: 22px;
+    }
+
+
+    .student-dashboard .materials-header p {
+        font-size: 12px;
+    }
+
+
+    .student-dashboard .materials-container {
+        gap: 13px;
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .student-dashboard .materials-container > * {
+        animation: none;
+    }
+
+}
+/* =========================================================
+   MATERIAL CARD
+========================================================= */
+
+.student-dashboard .material-card {
+    position: relative;
+
+    width: 100%;
+    min-height: 270px;
+
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 24px;
+
+    background: #ffffff;
+
+    border: 1px solid #e8edf4;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 6px 20px rgba(10, 37, 64, 0.06);
+
+    overflow: hidden;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+
+/* Top accent line */
+
+.student-dashboard .material-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 4px;
+
+    background: linear-gradient(
+        90deg,
+        #3a0ca3,
+        #00f5d4
+    );
+
+    transform: scaleX(0);
+
+    transform-origin: left;
+
+    transition: transform 0.35s ease;
+}
+
+
+/* Card hover */
+
+.student-dashboard .material-card:hover {
+
+    transform: translateY(-7px);
+
+    border-color: rgba(58, 12, 163, 0.14);
+
+    box-shadow:
+        0 16px 35px rgba(10, 37, 64, 0.11);
+}
+
+.student-dashboard .material-card:hover::before {
+    transform: scaleX(1);
+}
+
+
+/* =========================================================
+   PDF ICON
+========================================================= */
+
+.student-dashboard .material-card .pdf {
+
+    width: 48px;
+    height: 48px;
+
+    padding: 11px;
+
+    box-sizing: border-box;
+
+    margin-bottom: 18px;
+
+    border-radius: 13px;
+
+    background: #eee9ff;
+
+    color: #3a0ca3;
+
+    font-size: 25px;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+.student-dashboard .material-card:hover .pdf {
+
+    transform: rotate(-5deg) scale(1.05);
+
+    background: #e4ddff;
+}
+
+
+/* =========================================================
+   MATERIAL TITLE
+========================================================= */
+
+.student-dashboard .material-card h3 {
+
+    margin: 0 0 14px;
+
+    color: #0a2540;
+
+    font-size: 19px;
+    font-weight: 800;
+
+    line-height: 1.35;
+
+    letter-spacing: -0.2px;
+
+    /*
+       Prevent extremely long titles
+       from destroying the card.
+    */
+
+    display: -webkit-box;
+    /*-webkit-line-clamp: 2;*/
+    -webkit-box-orient: vertical;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   MATERIAL INFORMATION
+========================================================= */
+
+.student-dashboard .material-card p {
+
+    display: flex;
+    align-items: center;
+
+    gap: 5px;
+
+    margin: 4px 0;
+
+    color: #64748b;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+}
+
+
+/* Labels */
+
+.student-dashboard .material-card p::first-letter {
+    color: #334155;
+}
+
+
+/* =========================================================
+   BUTTON AREA
+========================================================= */
+
+.student-dashboard .material-card .buttons {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-top: auto;
+
+    padding-top: 20px;
+}
+
+
+/* =========================================================
+   CARD BUTTONS
+========================================================= */
+
+.student-dashboard .material-card .buttons button {
+
+    height: 40px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    padding: 0 16px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    font-family: inherit;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+
+/* View button */
+
+.student-dashboard .material-card .buttons button:first-child {
+
+    background: #3a0ca3;
+
+    color: #ffffff;
+
+    box-shadow:
+        0 5px 12px rgba(58, 12, 163, 0.18);
+}
+
+.student-dashboard .material-card .buttons button:first-child:hover {
+
+    background: #2f0885;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 7px 16px rgba(58, 12, 163, 0.25);
+}
+
+
+/* Download button */
+
+.student-dashboard .material-card .buttons a button {
+
+    background: #f0fdfa;
+
+    color: #007f73;
+
+    border: 1px solid #b8f4eb;
+}
+
+.student-dashboard .material-card .buttons a button:hover {
+
+    background: #00f5d4;
+
+    color: #0a2540;
+
+    border-color: #00f5d4;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 6px 14px rgba(0, 245, 212, 0.2);
+}
+
+
+/* =========================================================
+   BUTTON ICON
+========================================================= */
+
+.student-dashboard .material-card .buttons svg {
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .student-dashboard .material-card {
+
+        min-height: 265px;
+
+        padding: 22px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .student-dashboard .material-card {
+
+        min-height: auto;
+
+        padding: 20px;
+
+        border-radius: 16px;
+    }
+
+
+    .student-dashboard .material-card .pdf {
+
+        width: 44px;
+        height: 44px;
+
+        padding: 10px;
+
+        margin-bottom: 15px;
+    }
+
+
+    .student-dashboard .material-card h3 {
+
+        font-size: 18px;
+
+        margin-bottom: 12px;
+    }
+
+
+    .student-dashboard .material-card p {
+
+        font-size: 13px;
+    }
+
+
+    .student-dashboard .material-card .buttons {
+
+        padding-top: 18px;
+
+        gap: 8px;
+    }
+
+
+    .student-dashboard .material-card .buttons button {
+
+        height: 39px;
+
+        padding: 0 14px;
+
+        font-size: 12px;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 360px) {
+
+    .student-dashboard .material-card .buttons {
+
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+
+    .student-dashboard .material-card .buttons button,
+    .student-dashboard .material-card .buttons a {
+
+        width: 100%;
+    }
+
+
+    .student-dashboard .material-card .buttons a button {
+
+        width: 100%;
+    }
+
+}

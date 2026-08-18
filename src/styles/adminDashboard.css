@@ -1,0 +1,525 @@
+/* =========================================================
+   CAMPUSDOCS - ADMIN DASHBOARD
+   Theme: Navy + Indigo + Teal + Cyan
+========================================================= */
+
+.admin-dashboard {
+    min-height: 100vh;
+
+    box-sizing: border-box;
+
+    padding: 45px max(20px, 6vw) 70px;
+
+    background:
+        radial-gradient(
+            circle at 90% 0%,
+            rgba(0, 245, 212, 0.07),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 0% 25%,
+            rgba(58, 12, 163, 0.06),
+            transparent 25%
+        ),
+        #f7fafc;
+
+    color: #0a2540;
+}
+
+
+/* =========================================================
+   PAGE HEADER
+========================================================= */
+
+.admin-dashboard > h1 {
+    margin: 0;
+
+    color: #0a2540;
+
+    font-size: 34px;
+
+    font-weight: 800;
+
+    letter-spacing: -0.8px;
+
+    animation: adminFadeDown 0.5s ease-out;
+}
+
+
+.admin-dashboard > h1::after {
+    content: "";
+
+    display: block;
+
+    width: 48px;
+
+    height: 4px;
+
+    margin-top: 10px;
+
+    border-radius: 20px;
+
+    background: linear-gradient(
+        90deg,
+        #3a0ca3,
+        #008080,
+        #00f5d4
+    );
+}
+
+
+/* =========================================================
+   DASHBOARD STAT CARDS
+========================================================= */
+
+.dashboard-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 20px;
+
+    margin: 32px 0 50px;
+}
+
+
+/*
+   Your DashboardCard component should have:
+   .dashboard-card
+*/
+
+.dashboard-card {
+    position: relative;
+
+    min-height: 145px;
+
+    box-sizing: border-box;
+
+    padding: 24px;
+
+    background: #ffffff;
+
+    border: 1px solid #e6ecf2;
+
+    border-radius: 17px;
+
+    box-shadow:
+        0 7px 24px rgba(10, 37, 64, 0.055);
+
+    overflow: hidden;
+
+    animation: adminCardAppear 0.5s ease-out both;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+
+.dashboard-card:nth-child(1) {
+    animation-delay: 0.05s;
+}
+
+.dashboard-card:nth-child(2) {
+    animation-delay: 0.10s;
+}
+
+.dashboard-card:nth-child(3) {
+    animation-delay: 0.15s;
+}
+
+.dashboard-card:nth-child(4) {
+    animation-delay: 0.20s;
+}
+
+
+.dashboard-card:hover {
+    transform: translateY(-6px);
+
+    border-color: #d7dff0;
+
+    box-shadow:
+        0 15px 32px rgba(10, 37, 64, 0.10);
+}
+
+
+/* Decorative circle */
+
+.dashboard-card::after {
+    content: "";
+
+    position: absolute;
+
+    width: 90px;
+    height: 90px;
+
+    right: -35px;
+    bottom: -35px;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(58, 12, 163, 0.06),
+            rgba(0, 245, 212, 0.10)
+        );
+
+    transition:
+        transform 0.4s ease;
+}
+
+
+.dashboard-card:hover::after {
+    transform: scale(1.3);
+}
+
+
+/* =========================================================
+   CARD TEXT
+========================================================= */
+
+.dashboard-card h3 {
+    margin: 0;
+
+    color: #64748b;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.7px;
+}
+
+
+.dashboard-card h1 {
+    position: relative;
+
+    z-index: 2;
+
+    margin: 14px 0 0;
+
+    color: #0a2540;
+
+    font-size: 38px;
+
+    font-weight: 800;
+
+    line-height: 1;
+}
+
+
+/* =========================================================
+   QUICK ACTIONS HEADING
+========================================================= */
+
+.admin-dashboard > h2 {
+    margin: 0;
+
+    color: #0a2540;
+
+    font-size: 25px;
+
+    font-weight: 800;
+
+    letter-spacing: -0.3px;
+}
+
+
+.admin-dashboard > h2::after {
+    content: "";
+
+    display: block;
+
+    width: 40px;
+
+    height: 3px;
+
+    margin-top: 8px;
+
+    border-radius: 10px;
+
+    background: #00f5d4;
+}
+
+
+/* =========================================================
+   QUICK ACTION GRID
+========================================================= */
+
+.quick-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(220px, 1fr));
+
+    gap: 18px;
+
+    max-width: 850px;
+
+    margin-top: 22px;
+}
+
+
+/* Remove default Link styling */
+
+.quick-grid a {
+    display: block;
+
+    color: inherit;
+
+    text-decoration: none;
+}
+
+
+/* =========================================================
+   QUICK ACTION
+========================================================= */
+
+.quick-btn {
+    position: relative;
+
+    width: 100%;
+
+    min-height: 65px;
+
+    box-sizing: border-box;
+
+    padding: 17px 20px;
+
+    border: 1px solid #e3e8ef;
+
+    border-radius: 13px;
+
+    background: #ffffff;
+
+    color: #0a2540;
+
+    font-family: inherit;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 5px 18px rgba(10, 37, 64, 0.045);
+
+    overflow: hidden;
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        color 0.25s ease;
+}
+
+
+/* Left accent */
+
+.quick-btn::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    width: 4px;
+    height: 100%;
+
+    background: linear-gradient(
+        180deg,
+        #3a0ca3,
+        #00f5d4
+    );
+
+    transform: scaleY(0);
+
+    transform-origin: bottom;
+
+    transition:
+        transform 0.25s ease;
+}
+
+
+.quick-btn:hover {
+    color: #3a0ca3;
+
+    border-color: #d5cef0;
+
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 12px 25px rgba(10, 37, 64, 0.09);
+}
+
+
+.quick-btn:hover::before {
+    transform: scaleY(1);
+}
+
+
+.quick-btn:active {
+    transform: scale(0.98);
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes adminFadeDown {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(-12px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+
+}
+
+
+@keyframes adminCardAppear {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .dashboard-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .admin-dashboard {
+        padding:
+            30px
+            16px
+            50px;
+    }
+
+
+    .admin-dashboard > h1 {
+        font-size: 27px;
+    }
+
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+
+        gap: 14px;
+
+        margin-top: 25px;
+
+        margin-bottom: 40px;
+    }
+
+
+    .dashboard-card {
+        min-height: 125px;
+
+        padding: 21px;
+    }
+
+
+    .dashboard-card h1 {
+        font-size: 34px;
+    }
+
+
+    .admin-dashboard > h2 {
+        font-size: 22px;
+    }
+
+
+    .quick-grid {
+        grid-template-columns: 1fr;
+
+        gap: 12px;
+
+        margin-top: 18px;
+    }
+
+
+    .quick-btn {
+        min-height: 58px;
+
+        padding: 15px 17px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .admin-dashboard {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+
+    .admin-dashboard > h1 {
+        font-size: 24px;
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .admin-dashboard *,
+    .admin-dashboard *::before,
+    .admin-dashboard *::after {
+        animation: none !important;
+
+        transition: none !important;
+    }
+
+}

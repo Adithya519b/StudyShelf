@@ -1,0 +1,868 @@
+/* =========================================
+   DASHBOARD STATS
+========================================= */
+.stats-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding: 20px 0;
+    flex-wrap: wrap;
+}
+/* =========================================
+   STATISTICS CONTAINER
+========================================= */
+
+.stats-container {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 35px;
+
+    flex-wrap: wrap;
+
+    padding: 30px 20px;
+
+}
+
+
+/* =========================================
+   STAT CARD
+========================================= */
+
+.stat-book-card {
+
+    position: relative;
+
+    width: 230px;
+
+    height: 230px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.12);
+
+}
+
+
+/* =========================================
+   BOOK ANIMATION
+========================================= */
+
+.book-animation {
+
+    background-color: #3a0ca3;
+
+    border-radius: 0.25em;
+
+    box-shadow:
+        0 0.25em 0.5em hsla(0, 0%, 0%, 0.3),
+        0 0 0 0.25em #4c1d95 inset;
+
+    padding: 0.25em;
+
+    perspective: 37.5em;
+
+    position: absolute;
+
+    width: 10em;
+
+    height: 10em;
+
+    transform: translate3d(0, 0, 0);
+
+    transform-style: preserve-3d;
+
+}
+
+
+/* =========================================
+   BOOK PAGES
+========================================= */
+
+.book__pg-shadow,
+.book__pg {
+
+    animation: cover 5s ease-in-out infinite;
+
+    position: absolute;
+
+    left: 0.25em;
+
+    width: calc(50% - 0.25em);
+
+}
+
+
+.book__pg-shadow {
+
+    animation-name: shadow;
+
+    background-image:
+        linear-gradient(
+            -45deg,
+            hsla(0, 0%, 0%, 0) 50%,
+            hsla(0, 0%, 0%, 0.3) 50%
+        );
+
+    filter: blur(0.25em);
+
+    top: calc(100% - 0.25em);
+
+    height: 3.75em;
+
+    transform: scaleY(0);
+
+    transform-origin: 100% 0%;
+
+}
+
+
+.book__pg {
+
+    animation-name: pg1;
+
+    background-color: hsl(223, 10%, 100%);
+
+    background-image:
+        linear-gradient(
+            90deg,
+            hsla(223, 10%, 90%, 0) 87.5%,
+            hsl(223, 10%, 90%)
+        );
+
+    height: calc(100% - 0.5em);
+
+    transform-origin: 100% 50%;
+
+}
+
+
+/* =========================================
+   PAGE LINES
+========================================= */
+
+.book__pg--2,
+.book__pg--3,
+.book__pg--4 {
+
+    background-image:
+
+        repeating-linear-gradient(
+            hsl(223, 10%, 10%) 0 0.125em,
+            hsla(223, 10%, 10%, 0) 0.125em 0.5em
+        ),
+
+        linear-gradient(
+            90deg,
+            hsla(223, 10%, 90%, 0) 87.5%,
+            hsl(223, 10%, 90%)
+        );
+
+    background-repeat: no-repeat;
+
+    background-position: center;
+
+    background-size:
+        2.5em 4.125em,
+        100% 100%;
+
+}
+
+
+.book__pg--2 {
+    animation-name: pg2;
+}
+
+
+.book__pg--3 {
+    animation-name: pg3;
+}
+
+
+.book__pg--4 {
+    animation-name: pg4;
+}
+
+
+.book__pg--5 {
+    animation-name: pg5;
+}
+
+
+/* =========================================
+   STAT CONTENT
+========================================= */
+
+.stat-book-content {
+
+    position: absolute;
+
+    z-index: 20;
+
+    text-align: center;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 90%;
+
+    height: 50%;
+
+    color: #ffffff;
+
+    pointer-events: none;
+
+    text-shadow:
+        0 2px 5px rgba(0, 0, 0, 0.35);
+
+}
+
+
+.stat-book-content svg {
+
+    font-size: 34px;
+
+    margin-bottom: 2px;
+
+    color:rgb(255, 21, 0);
+
+}
+
+
+.stat-book-content h2 {
+
+    margin: 0;
+
+    font-size: 32px;
+
+    font-weight: 800;
+    color:black;
+
+}
+
+
+.stat-book-content p {
+
+    margin: 5px 0 0;
+
+    font-size: 15px;
+
+    font-weight: 600;
+    color:black;
+
+}
+
+
+/* =========================================
+   BOOK COVER ANIMATION
+========================================= */
+
+@keyframes cover {
+
+    from,
+    5%,
+    45%,
+    55%,
+    95%,
+    to {
+
+        animation-timing-function: ease-out;
+
+        background-color: #7c3aed;
+
+    }
+
+    10%,
+    40%,
+    60%,
+    90% {
+
+        animation-timing-function: ease-in;
+
+        background-color: #5109fa;
+
+    }
+
+}
+
+
+/* =========================================
+   SHADOW ANIMATION
+========================================= */
+
+@keyframes shadow {
+
+    from,
+    10.01%,
+    20.01%,
+    30.01%,
+    40.01% {
+
+        animation-timing-function: ease-in;
+
+        transform:
+            translate3d(0, 0, 1px)
+            scaleY(0)
+            rotateY(0);
+
+    }
+
+    5%,
+    15%,
+    25%,
+    35%,
+    45%,
+    55%,
+    65%,
+    75%,
+    85%,
+    95% {
+
+        animation-timing-function: ease-out;
+
+        transform:
+            translate3d(0, 0, 1px)
+            scaleY(0.2)
+            rotateY(90deg);
+
+    }
+
+    10%,
+    20%,
+    30%,
+    40%,
+    50%,
+    to {
+
+        animation-timing-function: ease-out;
+
+        transform:
+            translate3d(0, 0, 1px)
+            scaleY(0)
+            rotateY(180deg);
+
+    }
+
+    50.01%,
+    60.01%,
+    70.01%,
+    80.01%,
+    90.01% {
+
+        animation-timing-function: ease-in;
+
+        transform:
+            translate3d(0, 0, 1px)
+            scaleY(0)
+            rotateY(180deg);
+
+    }
+
+    60%,
+    70%,
+    80%,
+    90%,
+    to {
+
+        animation-timing-function: ease-out;
+
+        transform:
+            translate3d(0, 0, 1px)
+            scaleY(0)
+            rotateY(0);
+
+    }
+
+}
+
+
+/* =========================================
+   PAGE 1
+========================================= */
+
+@keyframes pg1 {
+
+    from,
+    to {
+
+        animation-timing-function: ease-in-out;
+
+        background-color: hsl(223, 10%, 100%);
+
+        transform:
+            translate3d(0, 0, 1px)
+            rotateY(0.4deg);
+
+    }
+
+    10%,
+    15% {
+
+        animation-timing-function: ease-out;
+
+        background-color: hsl(223, 10%, 100%);
+
+        transform:
+            translate3d(0, 0, 1px)
+            rotateY(180deg);
+
+    }
+
+    20%,
+    80% {
+
+        animation-timing-function: ease-in;
+
+        background-color: hsl(223, 10%, 45%);
+
+        transform:
+            translate3d(0, 0, 1px)
+            rotateY(180deg);
+
+    }
+
+    85%,
+    90% {
+
+        animation-timing-function: ease-in-out;
+
+        background-color: hsl(223, 10%, 100%);
+
+        transform:
+            translate3d(0, 0, 1px)
+            rotateY(180deg);
+
+    }
+
+}
+
+
+/* =========================================
+   PAGE 2
+========================================= */
+
+@keyframes pg2 {
+
+    from,
+    to {
+
+        animation-timing-function: ease-in;
+
+        background-color: hsl(223, 10%, 45%);
+
+        transform:
+            translate3d(0, 0, 1px)
+            rotateY(0.3deg);
+
+    }
+
+    5%,
+    10% {
+
+        animation-timing-function: ease-in-out;
+
+        background-color: hsl(223, 10%, 100%);
+
+        transform:
+            translate3d(0, 0, 1px)
+            rotateY(0.3deg);
+
+    }
+
+    20%,
+    25% {
+
+        animation-timing-function: ease-out;
+
+        background-color: hsl(223, 10%, 100%);
+
+        transform:
+            translate3d(0, 0, 1px)
+            rotateY(179.9deg);
+
+    }
+
+    30%,
+    70% {
+
+        animation-timing-function: ease-in;
+
+        background-color: hsl(223, 10%, 45%);
+
+        transform:
+            translate3d(0, 0, 1px)
+            rotateY(179.9deg);
+
+    }
+
+    75%,
+    80% {
+
+        animation-timing-function: ease-in-out;
+
+        background-color: hsl(223, 10%, 100%);
+
+        transform:
+            translate3d(0, 0, 1px)
+            rotateY(179.9deg);
+
+    }
+
+    90%,
+    95% {
+
+        animation-timing-function: ease-out;
+
+        background-color: hsl(223, 10%, 100%);
+
+        transform:
+            translate3d(0, 0, 1px)
+            rotateY(0.3deg);
+
+    }
+
+}
+
+
+/* =========================================
+   PAGE 3
+========================================= */
+
+@keyframes pg3 {
+
+    from,
+    10%,
+    90%,
+    to {
+
+        animation-timing-function: ease-in;
+
+        background-color: hsl(223, 10%, 45%);
+
+        transform:
+            translate3d(0, 0, 1px)
+            rotateY(0.2deg);
+
+    }
+
+    15%,
+    20% {
+
+        animation-timing-function: ease-in-out;
+
+        background-color: hsl(223, 10%, 100%);
+
+        transform:
+            translate3d(0, 0, 1px)
+            rotateY(0.2deg);
+
+    }
+
+    30%,
+    35% {
+
+        animation-timing-function: ease-out;
+
+        background-color: hsl(223, 10%, 100%);
+
+        transform:
+            translate3d(0, 0, 1px)
+            rotateY(179.8deg);
+
+    }
+
+    40%,
+    60% {
+
+        animation-timing-function: ease-in;
+
+        background-color: hsl(223, 10%, 45%);
+
+        transform:
+            translate3d(0, 0, 1px)
+            rotateY(179.8deg);
+
+    }
+
+    65%,
+    70% {
+
+        animation-timing-function: ease-in-out;
+
+        background-color: hsl(223, 10%, 100%);
+
+        transform:
+            translate3d(0, 0, 1px)
+            rotateY(179.8deg);
+
+    }
+
+    80%,
+    85% {
+
+        animation-timing-function: ease-out;
+
+        background-color: hsl(223, 10%, 100%);
+
+        transform:
+            translate3d(0, 0, 1px)
+            rotateY(0.2deg);
+
+    }
+
+}
+
+
+/* =========================================
+   PAGE 4
+========================================= */
+
+@keyframes pg4 {
+
+    from,
+    20%,
+    80%,
+    to {
+
+        animation-timing-function: ease-in;
+
+        background-color: hsl(223, 10%, 45%);
+
+        transform:
+            translate3d(0, 0, 1px)
+            rotateY(0.1deg);
+
+    }
+
+    25%,
+    30% {
+
+        animation-timing-function: ease-in-out;
+
+        background-color: hsl(223, 10%, 100%);
+
+        transform:
+            translate3d(0, 0, 1px)
+            rotateY(0.1deg);
+
+    }
+
+    40%,
+    45% {
+
+        animation-timing-function: ease-out;
+
+        background-color: hsl(223, 10%, 100%);
+
+        transform:
+            translate3d(0, 0, 1px)
+            rotateY(179.7deg);
+
+    }
+
+    50% {
+
+        animation-timing-function: ease-in;
+
+        background-color: hsl(223, 10%, 45%);
+
+        transform:
+            translate3d(0, 0, 1px)
+            rotateY(179.7deg);
+
+    }
+
+    55%,
+    60% {
+
+        animation-timing-function: ease-in-out;
+
+        background-color: hsl(223, 10%, 100%);
+
+        transform:
+            translate3d(0, 0, 1px)
+            rotateY(179.7deg);
+
+    }
+
+    70%,
+    75% {
+
+        animation-timing-function: ease-out;
+
+        background-color: hsl(223, 10%, 100%);
+
+        transform:
+            translate3d(0, 0, 1px)
+            rotateY(0.1deg);
+
+    }
+
+}
+
+
+/* =========================================
+   PAGE 5
+========================================= */
+
+@keyframes pg5 {
+
+    from,
+    30%,
+    70%,
+    to {
+
+        animation-timing-function: ease-in;
+
+        background-color: hsl(223, 10%, 45%);
+
+        transform:
+            translate3d(0, 0, 1px)
+            rotateY(0);
+
+    }
+
+    35%,
+    40% {
+
+        animation-timing-function: ease-in-out;
+
+        background-color: hsl(223, 10%, 100%);
+
+        transform:
+            translate3d(0, 0, 1px)
+            rotateY(0deg);
+
+    }
+
+    50% {
+
+        animation-timing-function: ease-in-out;
+
+        background-color: hsl(223, 10%, 100%);
+
+        transform:
+            translate3d(0, 0, 1px)
+            rotateY(179.6deg);
+
+    }
+
+    60%,
+    65% {
+
+        animation-timing-function: ease-out;
+
+        background-color: hsl(223, 10%, 100%);
+
+        transform:
+            translate3d(0, 0, 1px)
+            rotateY(0);
+
+    }
+
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 768px) {
+
+    .stats-container {
+
+        gap: 20px;
+
+        padding: 20px 10px;
+
+    }
+
+    .stat-book-card {
+
+        width: 210px;
+
+        height: 210px;
+
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .stats-container {
+
+        flex-direction: column;
+
+    }
+
+    .stat-book-card {
+
+        width: 220px;
+
+        height: 220px;
+
+    }
+
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .stats-container {
+
+        grid-template-columns:
+            repeat(2, minmax(220px, 1fr));
+
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .stats-container {
+
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+
+    }
+
+    .flip-card {
+
+        height: 200px;
+
+    }
+
+}

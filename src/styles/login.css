@@ -1,0 +1,1312 @@
+/* =========================================
+   LOGIN PAGE
+========================================= */
+
+.login-container {
+    position: relative;
+
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 40px 20px;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 10% 20%,
+            rgba(58, 12, 163, 0.08),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 90% 80%,
+            rgba(0, 245, 212, 0.08),
+            transparent 30%
+        ),
+        #f7fafc;
+}
+
+
+/* =========================================
+   BACKGROUND GLOWS
+========================================= */
+
+.login-glow {
+    position: absolute;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    filter: blur(2px);
+}
+
+.login-glow-one {
+    width: 300px;
+    height: 300px;
+
+    top: -150px;
+    left: -100px;
+
+    background: rgba(58, 12, 163, 0.08);
+
+    animation: loginFloat 8s ease-in-out infinite;
+}
+
+.login-glow-two {
+    width: 250px;
+    height: 250px;
+
+    right: -100px;
+    bottom: -100px;
+
+    background: rgba(0, 245, 212, 0.08);
+
+    animation: loginFloat 9s ease-in-out infinite reverse;
+}
+
+
+/* =========================================
+   LOGIN CARD
+========================================= */
+
+.login-card {
+    position: relative;
+    z-index: 2;
+
+    width: min(100%, 430px);
+
+    padding: 42px 40px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 20px;
+
+    background: rgba(255, 255, 255, 0.94);
+
+    border: 1px solid rgba(58, 12, 163, 0.08);
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 25px 60px rgba(10, 37, 64, 0.12);
+
+    backdrop-filter: blur(14px);
+
+    animation: loginCardEnter 0.65s ease-out;
+}
+
+
+/* =========================================
+   BRAND
+========================================= */
+
+.login-brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    color: #0a2540;
+
+    font-size: 24px;
+    font-weight: 800;
+
+    letter-spacing: -0.5px;
+}
+
+.login-brand > span span {
+    color: #3a0ca3;
+}
+
+
+.login-brand-icon {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background: linear-gradient(
+        135deg,
+        #3a0ca3,
+        #5a189a
+    );
+
+    color: #ffffff;
+
+    font-size: 18px;
+
+    box-shadow:
+        0 7px 18px rgba(58, 12, 163, 0.25);
+}
+
+
+/* =========================================
+   HEADING
+========================================= */
+
+.login-heading {
+    text-align: center;
+
+    margin-bottom: 4px;
+}
+
+.login-heading h1 {
+    margin: 0;
+
+    color: #0a2540;
+
+    font-size: 28px;
+    font-weight: 800;
+
+    letter-spacing: -0.5px;
+}
+
+.login-heading p {
+    margin: 8px 0 0;
+
+    color: #64748b;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================
+   INPUT GROUP
+========================================= */
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+.input-group label {
+    color: #334155;
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+
+/* =========================================
+   INPUT WRAPPER
+========================================= */
+
+.input-wrapper {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+}
+
+
+/* Input icon */
+
+.input-icon {
+    position: absolute;
+
+    left: 15px;
+
+    color: #94a3b8;
+
+    font-size: 14px;
+
+    pointer-events: none;
+
+    transition: color 0.25s ease;
+}
+
+
+/* Input */
+
+.login-card input {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 14px 15px 14px 43px;
+
+    border: 1.5px solid #e2e8f0;
+
+    border-radius: 11px;
+
+    outline: none;
+
+    background: #ffffff;
+
+    color: #0a2540;
+
+    font-size: 14px;
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+.login-card input::placeholder {
+    color: #a0aec0;
+}
+
+.login-card input:hover {
+    border-color: #cbd5e1;
+}
+
+.login-card input:focus {
+    border-color: #3a0ca3;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 0 0 4px rgba(58, 12, 163, 0.08);
+}
+
+.input-wrapper:focus-within .input-icon {
+    color: #3a0ca3;
+}
+
+
+/* =========================================
+   LOGIN BUTTON
+========================================= */
+
+.login-submit {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    margin-top: 4px;
+
+    padding: 14px 20px;
+
+    border: none;
+
+    border-radius: 11px;
+
+    background: linear-gradient(
+        135deg,
+        #3a0ca3,
+        #5a189a
+    );
+
+    color: #ffffff;
+
+    font-size: 15px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 20px rgba(58, 12, 163, 0.22);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.login-submit svg {
+    font-size: 12px;
+
+    transition: transform 0.25s ease;
+}
+
+.login-submit:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 27px rgba(58, 12, 163, 0.30);
+}
+
+.login-submit:hover svg {
+    transform: translateX(4px);
+}
+
+.login-submit:active {
+    transform: translateY(0);
+}
+
+
+/* =========================================
+   REGISTER
+========================================= */
+
+.register-text {
+    margin: 2px 0 0;
+
+    text-align: center;
+
+    color: #64748b;
+
+    font-size: 13px;
+}
+
+.register-text a {
+    margin-left: 5px;
+
+    color: #3a0ca3;
+
+    font-weight: 700;
+
+    text-decoration: none;
+
+    transition: color 0.2s ease;
+}
+
+.register-text a:hover {
+    color: #008080;
+
+    text-decoration: underline;
+}
+
+
+/* =========================================
+   BACK HOME
+========================================= */
+
+.back-home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    margin-top: -3px;
+
+    color: #64748b;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.back-home svg {
+    font-size: 11px;
+
+    transition: transform 0.2s ease;
+}
+
+.back-home:hover {
+    color: #3a0ca3;
+}
+
+.back-home:hover svg {
+    transform: translateX(-3px);
+}
+
+
+/* =========================================
+   FACULTY THEME
+========================================= */
+
+.faculty-theme .login-submit {
+    background: linear-gradient(
+        135deg,
+        #008080,
+        #009f9f
+    );
+
+    box-shadow:
+        0 8px 20px rgba(0, 128, 128, 0.22);
+}
+
+.faculty-theme .login-submit:hover {
+    box-shadow:
+        0 12px 27px rgba(0, 128, 128, 0.30);
+}
+
+
+/* =========================================
+   ADMIN THEME
+========================================= */
+
+.admin-theme .login-submit {
+    background: linear-gradient(
+        135deg,
+        #0a2540,
+        #163b5c
+    );
+
+    box-shadow:
+        0 8px 20px rgba(10, 37, 64, 0.22);
+}
+
+.admin-theme .login-submit:hover {
+    box-shadow:
+        0 12px 27px rgba(10, 37, 64, 0.30);
+}
+
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes loginCardEnter {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+}
+
+@keyframes loginFloat {
+
+    0%,
+    100% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(15px, 20px);
+    }
+
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 600px) {
+
+    .login-container {
+        padding: 25px 16px;
+    }
+
+    .login-card {
+        padding: 34px 26px;
+
+        border-radius: 18px;
+    }
+
+    .login-heading h1 {
+        font-size: 25px;
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 400px) {
+
+    .login-container {
+        padding: 18px 12px;
+    }
+
+    .login-card {
+        padding: 30px 20px;
+
+        border-radius: 17px;
+    }
+
+    .login-brand {
+        font-size: 21px;
+    }
+
+    .login-brand-icon {
+        width: 38px;
+        height: 38px;
+
+        font-size: 16px;
+    }
+
+    .login-heading h1 {
+        font-size: 23px;
+    }
+
+    .login-heading p {
+        font-size: 12px;
+    }
+
+    .login-card input {
+        padding: 13px 13px 13px 40px;
+    }
+
+}
+
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+
+        transition-duration: 0.01ms !important;
+    }
+
+}
+/* =========================================
+   DEPARTMENT + SEMESTER
+========================================= */
+
+.register-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    width: 100%;
+}
+
+.register-row .input-group {
+    min-width: 0;
+}
+
+
+/* Labels */
+
+.register-row .input-group label {
+    margin-bottom: 1px;
+}
+
+
+/* Select wrapper */
+
+.register-row .input-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+
+/* Select */
+
+.register-row select {
+    width: 100%;
+    height: 48px;
+
+    box-sizing: border-box;
+
+    padding: 0 38px 0 42px;
+
+    border: 1.5px solid #e2e8f0;
+    border-radius: 11px;
+
+    outline: none;
+
+    background-color: #ffffff;
+
+    color: #334155;
+
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    appearance: none;
+    -webkit-appearance: none;
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        background-color 0.25s ease;
+}
+
+
+/* Placeholder option */
+
+.register-row select:invalid {
+    color: #94a3b8;
+}
+
+
+/* Focus */
+
+.register-row select:focus {
+    border-color: #3a0ca3;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 0 0 4px rgba(58, 12, 163, 0.08);
+}
+
+
+/* Hover */
+
+.register-row select:hover {
+    border-color: #cbd5e1;
+}
+
+
+/* Left icon */
+
+.register-row .input-icon {
+    position: absolute;
+
+    left: 15px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    z-index: 2;
+
+    color: #94a3b8;
+
+    font-size: 14px;
+
+    pointer-events: none;
+
+    transition: color 0.25s ease;
+}
+
+
+/* Icon changes when select is focused */
+
+.register-row .input-wrapper:focus-within .input-icon {
+    color: #3a0ca3;
+}
+
+
+/* Custom dropdown arrow */
+
+.register-row .input-wrapper::after {
+    content: "⌄";
+
+    position: absolute;
+
+    right: 14px;
+    top: 50%;
+
+    transform: translateY(-55%);
+
+    color: #64748b;
+
+    font-size: 17px;
+    font-weight: 700;
+
+    pointer-events: none;
+
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+/* Arrow focus effect */
+
+.register-row .input-wrapper:focus-within::after {
+    color: #3a0ca3;
+
+    transform: translateY(-45%);
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+    .register-row {
+        grid-template-columns: 1fr;
+
+        gap: 17px;
+    }
+
+}/* =========================================================
+   FACULTY LOGIN THEME
+   CampusDocs - Teal / Indigo
+========================================================= */
+
+.faculty-theme {
+    position: relative;
+
+    border: 1px solid rgba(0, 128, 128, 0.12);
+
+    box-shadow:
+        0 20px 50px rgba(10, 37, 64, 0.10),
+        0 4px 12px rgba(0, 128, 128, 0.05);
+
+    animation: facultyCardEnter 0.6s ease-out;
+}
+
+
+/* Top accent line */
+
+.faculty-theme::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 4px;
+
+    border-radius: 15px 15px 0 0;
+
+    background: linear-gradient(
+        90deg,
+        #008080,
+        #00f5d4,
+        #3a0ca3
+    );
+}
+
+
+/* Faculty heading */
+
+.faculty-theme h1 {
+    margin-bottom: 2px;
+
+    color: #0a2540;
+
+    font-size: 28px;
+
+    letter-spacing: -0.5px;
+}
+
+
+.faculty-theme h2 {
+    color: #008080;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.5px;
+
+    margin-bottom: 12px;
+}
+
+
+/* =========================================================
+   FACULTY INPUTS
+========================================================= */
+
+.faculty-theme input {
+    background: #f8fafc;
+
+    border: 1px solid #dbe4ec;
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+.faculty-theme input:hover {
+    border-color: #99d6d6;
+}
+
+
+.faculty-theme input:focus {
+    background: #ffffff;
+
+    border-color: #008080;
+
+    box-shadow:
+        0 0 0 4px rgba(0, 128, 128, 0.10);
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   FACULTY LOGIN BUTTON
+========================================================= */
+/* =========================================================
+   FACULTY LOGIN BUTTON - MODERN
+========================================================= */
+
+.faculty-theme button[type="submit"] {
+    width: 100%;
+
+    height: 50px;
+
+    margin-top: 6px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    border-radius: 10px;
+
+    background: #008080;
+
+    color: #ffffff;
+
+    font-size: 16px;
+    font-weight: 700;
+
+    letter-spacing: 0.2px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 6px 16px rgba(0, 128, 128, 0.18);
+
+    transition:
+        background 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+/* Hover */
+
+.faculty-theme button[type="submit"]:hover {
+
+    background: #3a0ca3;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 22px rgba(58, 12, 163, 0.22);
+}
+
+
+/* Click */
+
+.faculty-theme button[type="submit"]:active {
+
+    transform: translateY(0) scale(0.98);
+
+    box-shadow:
+        0 4px 10px rgba(58, 12, 163, 0.15);
+}
+
+
+/* Keyboard focus */
+
+.faculty-theme button[type="submit"]:focus-visible {
+
+    outline: none;
+
+    box-shadow:
+        0 0 0 4px rgba(0, 245, 212, 0.25),
+        0 8px 20px rgba(0, 128, 128, 0.2);
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .faculty-theme button[type="submit"] {
+
+        height: 48px;
+
+        font-size: 15px;
+
+    }
+
+}
+
+/* =========================================================
+   REGISTER LINK
+========================================================= */
+
+.faculty-theme .register-text {
+    color: #64748b;
+}
+
+
+.faculty-theme .register-text a {
+    color: #008080;
+
+    transition:
+        color 0.2s ease,
+        text-decoration 0.2s ease;
+}
+
+
+.faculty-theme .register-text a:hover {
+    color: #3a0ca3;
+
+    text-decoration: underline;
+}
+
+
+/* Back to home link */
+
+.faculty-theme > a:last-child {
+    color: #4a5568;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.faculty-theme > a:last-child:hover {
+    color: #008080;
+
+    transform: translateX(-3px);
+}
+
+
+/* =========================================================
+   CARD ENTRANCE ANIMATION
+========================================================= */
+
+@keyframes facultyCardEnter {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .faculty-theme {
+        width: min(420px, calc(100vw - 32px));
+
+        padding: 30px 22px;
+    }
+
+
+    .faculty-theme h1 {
+        font-size: 24px;
+    }
+
+
+    .faculty-theme h2 {
+        font-size: 15px;
+    }
+
+
+    .faculty-theme input {
+        font-size: 15px;
+        padding: 13px;
+    }
+
+
+    .faculty-theme button[type="submit"] {
+        padding: 13px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .faculty-theme {
+        width: calc(100vw - 24px);
+
+        padding: 26px 18px;
+    }
+
+
+    .faculty-theme h1 {
+        font-size: 22px;
+    }
+
+}
+
+
+/* =========================================================
+   REDUCE ANIMATION FOR ACCESSIBILITY
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .faculty-theme,
+    .faculty-theme input,
+    .faculty-theme button,
+    .faculty-theme a {
+        animation: none;
+        transition: none;
+    }
+
+}
+/* =========================================================
+   ADMIN LOGIN THEME
+   CampusDocs - Administrator Portal
+========================================================= */
+
+.admin-theme {
+    position: relative;
+
+    border: 1px solid rgba(58, 12, 163, 0.10);
+
+    box-shadow:
+        0 18px 45px rgba(10, 37, 64, 0.10);
+
+    animation: adminLoginAppear 0.5s ease-out;
+}
+
+
+/* Top accent */
+
+.admin-theme::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 4px;
+
+    border-radius: 15px 15px 0 0;
+
+    background: linear-gradient(
+        90deg,
+        #0a2540,
+        #3a0ca3,
+        #00f5d4
+    );
+}
+
+
+/* =========================================================
+   ADMIN HEADING
+========================================================= */
+
+.admin-theme h1 {
+    color: #0a2540;
+
+    font-size: 26px;
+
+    font-weight: 800;
+
+    letter-spacing: -0.5px;
+
+    margin-bottom: 4px;
+}
+
+
+.admin-theme h2 {
+    color: #008080;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.5px;
+}
+
+
+/* =========================================================
+   ADMIN INPUTS
+========================================================= */
+
+.admin-theme input {
+    background: #f8fafc;
+
+    border: 1px solid #dce4ec;
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease,
+        transform 0.2s ease;
+}
+
+
+.admin-theme input:hover {
+    border-color: #b9c7d5;
+}
+
+
+.admin-theme input:focus {
+    background: #ffffff;
+
+    border-color: #3a0ca3;
+
+    box-shadow:
+        0 0 0 4px rgba(58, 12, 163, 0.08);
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   ADMIN LOGIN BUTTON
+========================================================= */
+
+.admin-theme > button {
+    width: 100%;
+
+    min-height: 48px;
+
+    margin-top: 4px;
+
+    padding: 13px 20px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: linear-gradient(
+        135deg,
+        #3a0ca3,
+        #0a2540
+    );
+
+    color: #ffffff;
+
+    font-family: inherit;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.2px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 18px rgba(58, 12, 163, 0.20);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+
+.admin-theme > button:hover {
+    background: linear-gradient(
+        135deg,
+        #008080,
+        #0a2540
+    );
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 11px 24px rgba(0, 128, 128, 0.22);
+}
+
+
+.admin-theme > button:active {
+    transform: scale(0.97);
+}
+
+
+/* =========================================================
+   BACK TO HOME
+========================================================= */
+
+.admin-theme > a {
+    color: #64748b;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.admin-theme > a:hover {
+    color: #3a0ca3;
+
+    transform: translateX(-2px);
+}
+
+
+/* =========================================================
+   ADMIN LOGIN ANIMATION
+========================================================= */
+
+@keyframes adminLoginAppear {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(18px)
+            scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .admin-theme h1 {
+        font-size: 23px;
+
+        line-height: 1.35;
+    }
+
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+
+    .admin-theme,
+    .admin-theme * {
+        animation: none !important;
+
+        transition: none !important;
+    }
+
+}

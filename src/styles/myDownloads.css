@@ -1,0 +1,414 @@
+/* =========================================================
+   CAMPUSDOCS - MY DOWNLOADS
+========================================================= */
+
+.downloads-page {
+    min-height: 100vh;
+
+    box-sizing: border-box;
+
+    padding: 45px max(24px, 5vw) 70px;
+
+    background:
+        radial-gradient(
+            circle at 90% 5%,
+            rgba(58, 12, 163, 0.05),
+            transparent 25%
+        ),
+        #f7fafc;
+
+    color: #0a2540;
+}
+
+
+/* =========================================================
+   PAGE HEADER
+========================================================= */
+
+.downloads-page h1 {
+    margin: 0 0 30px;
+
+    color: #0a2540;
+
+    font-size: 30px;
+    font-weight: 800;
+
+    letter-spacing: -0.6px;
+}
+
+
+/* =========================================================
+   DOWNLOAD CARD
+========================================================= */
+
+.download-card {
+    position: relative;
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 25px;
+
+    margin: 0 0 16px;
+
+    padding: 22px 24px;
+
+    background: #ffffff;
+
+    border: 1px solid #e8edf4;
+
+    border-radius: 17px;
+
+    box-shadow:
+        0 6px 20px rgba(10, 37, 64, 0.05);
+
+    overflow: hidden;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+
+/* Accent line */
+
+.download-card::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    width: 4px;
+    height: 100%;
+
+    background: linear-gradient(
+        180deg,
+        #3a0ca3,
+        #00f5d4
+    );
+
+    transform: scaleY(0);
+
+    transform-origin: bottom;
+
+    transition: transform 0.3s ease;
+}
+
+
+/* Hover */
+
+.download-card:hover {
+    transform: translateY(-4px);
+
+    border-color: #ddd6fe;
+
+    box-shadow:
+        0 14px 30px rgba(10, 37, 64, 0.09);
+}
+
+
+.download-card:hover::before {
+    transform: scaleY(1);
+}
+
+
+/* =========================================================
+   MATERIAL INFORMATION
+========================================================= */
+
+.download-card > div:first-child {
+    min-width: 0;
+}
+
+
+/* Title */
+
+.download-card h3 {
+    margin: 0 0 8px;
+
+    color: #0a2540;
+
+    font-size: 18px;
+    font-weight: 800;
+
+    line-height: 1.4;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* Subject / Faculty */
+
+.download-card p {
+    margin: 4px 0;
+
+    color: #64748b;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   DOWNLOAD ACTIONS
+========================================================= */
+
+.download-actions {
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+
+/* Remove Link styling */
+
+.download-actions a {
+    text-decoration: none;
+}
+
+
+/* =========================================================
+   ACTION BUTTONS
+========================================================= */
+
+.download-actions button {
+    min-width: 92px;
+
+    min-height: 40px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 0 16px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+
+/* =========================================================
+   VIEW BUTTON
+========================================================= */
+
+.download-actions a button {
+    background: #eee9ff;
+
+    color: #3a0ca3;
+
+    border: 1px solid #ddd6fe;
+}
+
+
+.download-actions a button:hover {
+    background: #3a0ca3;
+
+    color: #ffffff;
+
+    border-color: #3a0ca3;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 7px 16px rgba(58, 12, 163, 0.2);
+}
+
+
+/* =========================================================
+   DOWNLOAD BUTTON
+========================================================= */
+
+.download-actions > button {
+    background: #3a0ca3;
+
+    color: #ffffff;
+
+    box-shadow:
+        0 6px 14px rgba(58, 12, 163, 0.16);
+}
+
+
+.download-actions > button:hover {
+    background: #2f0885;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 9px 18px rgba(58, 12, 163, 0.23);
+}
+
+
+/* =========================================================
+   ACTIVE CLICK EFFECT
+========================================================= */
+
+.download-actions button:active {
+    transform: scale(0.96);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .downloads-page {
+        padding:
+            35px
+            25px
+            55px;
+    }
+
+
+    .downloads-page h1 {
+        font-size: 27px;
+
+        margin-bottom: 24px;
+    }
+
+
+    .download-card {
+        padding: 20px;
+
+        gap: 18px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .downloads-page {
+        padding:
+            25px
+            16px
+            45px;
+    }
+
+
+    .downloads-page h1 {
+        font-size: 24px;
+
+        margin-bottom: 20px;
+    }
+
+
+    .download-card {
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 18px;
+
+        padding: 20px;
+
+        border-radius: 15px;
+    }
+
+
+    .download-card h3 {
+        font-size: 17px;
+    }
+
+
+    .download-card p {
+        font-size: 12px;
+    }
+
+
+    .download-actions {
+        width: 100%;
+
+        display: grid;
+
+        grid-template-columns: 1fr 1fr;
+
+        gap: 9px;
+    }
+
+
+    .download-actions a,
+    .download-actions button {
+        width: 100%;
+    }
+
+
+    .download-actions a button,
+    .download-actions > button {
+        width: 100%;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 360px) {
+
+    .downloads-page {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+
+    .download-card {
+        padding: 17px;
+    }
+
+
+    .download-actions {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .download-card,
+    .download-actions button {
+        transition: none;
+    }
+
+}

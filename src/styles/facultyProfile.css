@@ -1,0 +1,933 @@
+/* =========================================================
+   CAMPUSDOCS - FACULTY PROFILE
+========================================================= */
+
+.faculty-profile-container {
+    min-height: 100vh;
+
+    box-sizing: border-box;
+
+    display: grid;
+
+    grid-template-columns: minmax(280px, 0.85fr) minmax(450px, 1.5fr);
+
+    gap: 28px;
+
+    padding: 45px max(20px, 6vw) 70px;
+
+    background:
+        radial-gradient(
+            circle at 90% 0%,
+            rgba(0, 245, 212, 0.07),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 0% 30%,
+            rgba(58, 12, 163, 0.06),
+            transparent 25%
+        ),
+        #f7fafc;
+
+    color: #0a2540;
+}
+
+
+/* =========================================================
+   PROFILE CARD
+========================================================= */
+
+.faculty-profile-card,
+.faculty-stats-card {
+    position: relative;
+
+    background: #ffffff;
+
+    border: 1px solid #e7edf3;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 8px 28px rgba(10, 37, 64, 0.06);
+
+    animation: profileFadeUp 0.5s ease-out;
+
+    overflow: hidden;
+}
+
+
+/* Top gradient line */
+
+.faculty-profile-card::before,
+.faculty-stats-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 4px;
+
+    background: linear-gradient(
+        90deg,
+        #3a0ca3,
+        #008080,
+        #00f5d4
+    );
+}
+
+
+/* =========================================================
+   PROFILE CARD
+========================================================= */
+
+.faculty-profile-card {
+    padding: 38px 32px;
+
+    text-align: center;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.faculty-profile-card:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 16px 35px rgba(10, 37, 64, 0.10);
+}
+
+
+/* =========================================================
+   PROFILE ICON
+========================================================= */
+
+.faculty-profile-icon {
+    display: block;
+
+    margin: 5px auto 18px;
+
+    color: #008080;
+
+    font-size: 105px;
+
+    filter:
+        drop-shadow(
+            0 8px 12px rgba(0, 128, 128, 0.12)
+        );
+
+    transition:
+        transform 0.35s ease,
+        color 0.35s ease;
+}
+
+
+.faculty-profile-card:hover .faculty-profile-icon {
+    color: #3a0ca3;
+
+    transform:
+        translateY(-4px)
+        scale(1.03);
+}
+
+
+/* =========================================================
+   NAME & EMAIL
+========================================================= */
+
+.faculty-profile-card h2 {
+    margin: 0;
+
+    color: #0a2540;
+
+    font-size: 25px;
+
+    font-weight: 800;
+
+    letter-spacing: -0.4px;
+}
+
+
+.faculty-profile-card > p {
+    margin: 8px 0 20px;
+
+    color: #64748b;
+
+    font-size: 14px;
+
+    word-break: break-word;
+}
+
+
+/* Divider */
+
+.faculty-profile-card hr {
+    height: 1px;
+
+    margin: 0 0 10px;
+
+    border: none;
+
+    background: #e8edf2;
+}
+
+
+/* =========================================================
+   PROFILE DETAILS
+========================================================= */
+
+.faculty-profile-details {
+    margin-top: 10px;
+
+    text-align: left;
+}
+
+
+.faculty-profile-details div {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 15px 4px;
+
+    border-bottom: 1px solid #edf1f5;
+
+    transition:
+        background 0.2s ease,
+        padding 0.2s ease;
+}
+
+
+.faculty-profile-details div:hover {
+    padding-left: 8px;
+
+    padding-right: 8px;
+
+    background: #f8fafc;
+}
+
+
+.faculty-profile-details div:last-child {
+    border-bottom: none;
+}
+
+
+.faculty-profile-details strong {
+    color: #64748b;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+
+.faculty-profile-details span {
+    max-width: 55%;
+
+    color: #0a2540;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    text-align: right;
+
+    word-break: break-word;
+}
+
+
+/* =========================================================
+   STATS CARD
+========================================================= */
+
+.faculty-stats-card {
+    padding: 34px;
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+.faculty-stats-card > h2 {
+    margin: 0;
+
+    color: #0a2540;
+
+    font-size: 24px;
+
+    font-weight: 800;
+}
+
+
+.faculty-stats-card > h2::after {
+    content: "";
+
+    display: block;
+
+    width: 42px;
+
+    height: 4px;
+
+    margin-top: 9px;
+
+    border-radius: 20px;
+
+    background: linear-gradient(
+        90deg,
+        #008080,
+        #00f5d4
+    );
+}
+
+
+/* =========================================================
+   STATS GRID
+========================================================= */
+
+.faculty-stats-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 18px;
+
+    margin-top: 28px;
+}
+
+
+.faculty-stat-box {
+    position: relative;
+
+    padding: 25px 20px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #f7fafc
+        );
+
+    border: 1px solid #e5ebf1;
+
+    border-radius: 16px;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.faculty-stat-box::after {
+    content: "";
+
+    position: absolute;
+
+    width: 70px;
+    height: 70px;
+
+    right: -30px;
+    bottom: -30px;
+
+    border-radius: 50%;
+
+    background: rgba(0, 245, 212, 0.08);
+}
+
+
+.faculty-stat-box:hover {
+    transform: translateY(-5px);
+
+    border-color: #b7dede;
+
+    box-shadow:
+        0 12px 25px rgba(10, 37, 64, 0.08);
+}
+
+
+/* =========================================================
+   STAT ICON
+========================================================= */
+
+.faculty-stat-box svg {
+    margin-bottom: 10px;
+
+    color: #008080;
+
+    font-size: 34px;
+
+    transition:
+        transform 0.3s ease,
+        color 0.3s ease;
+}
+
+
+.faculty-stat-box:hover svg {
+    color: #3a0ca3;
+
+    transform:
+        translateY(-3px)
+        scale(1.08);
+}
+
+
+.faculty-stat-box h3 {
+    margin: 4px 0;
+
+    color: #0a2540;
+
+    font-size: 30px;
+
+    font-weight: 800;
+}
+
+
+.faculty-stat-box p {
+    margin: 0;
+
+    color: #64748b;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   PROFILE BUTTONS
+========================================================= */
+
+.faculty-profile-buttons {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 14px;
+
+    margin-top: auto;
+
+    padding-top: 30px;
+}
+
+
+.faculty-edit-btn,
+.faculty-logout-btn {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 9px;
+
+    min-height: 46px;
+
+    padding: 11px 16px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+
+/* Edit */
+
+.faculty-edit-btn {
+    background: #008080;
+
+    color: #ffffff;
+
+    box-shadow:
+        0 6px 15px rgba(0, 128, 128, 0.15);
+}
+
+
+.faculty-edit-btn:hover {
+    background: #3a0ca3;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 9px 20px rgba(58, 12, 163, 0.20);
+}
+
+
+/* Logout */
+
+.faculty-logout-btn {
+    background: #fff1f2;
+
+    color: #dc2626;
+
+    border: 1px solid #fecdd3;
+}
+
+
+.faculty-logout-btn:hover {
+    background: #dc2626;
+
+    color: #ffffff;
+
+    border-color: #dc2626;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 9px 20px rgba(220, 38, 38, 0.18);
+}
+
+
+.faculty-edit-btn:active,
+.faculty-logout-btn:active {
+    transform: scale(0.97);
+}
+
+
+/* =========================================================
+   MODAL OVERLAY
+========================================================= */
+
+.modal-overlay {
+    position: fixed;
+
+    inset: 0;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 20px;
+
+    background: rgba(10, 37, 64, 0.55);
+
+    backdrop-filter: blur(6px);
+
+    -webkit-backdrop-filter: blur(6px);
+
+    z-index: 9999;
+
+    animation: modalFade 0.2s ease-out;
+}
+
+
+/* =========================================================
+   EDIT MODAL
+========================================================= */
+
+.edit-modal {
+    position: relative;
+
+    width: min(440px, 100%);
+
+    box-sizing: border-box;
+
+    padding: 32px;
+
+    background: #ffffff;
+
+    border: 1px solid #e5ebf1;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 25px 70px rgba(10, 37, 64, 0.22);
+
+    animation: modalSlide 0.25s ease-out;
+}
+
+
+.edit-modal::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 4px;
+
+    border-radius: 18px 18px 0 0;
+
+    background: linear-gradient(
+        90deg,
+        #3a0ca3,
+        #008080,
+        #00f5d4
+    );
+}
+
+
+.edit-modal h2 {
+    margin: 0 0 25px;
+
+    color: #0a2540;
+
+    font-size: 23px;
+
+    font-weight: 800;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   MODAL INPUTS
+========================================================= */
+
+.edit-modal input {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    margin-bottom: 14px;
+
+    padding: 13px 14px;
+
+    border: 1px solid #dce4ec;
+
+    border-radius: 10px;
+
+    background: #f8fafc;
+
+    color: #0a2540;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.edit-modal input:focus {
+    background: #ffffff;
+
+    border-color: #008080;
+
+    box-shadow:
+        0 0 0 4px rgba(0, 128, 128, 0.08);
+}
+
+
+/* =========================================================
+   MODAL BUTTONS
+========================================================= */
+
+.modal-buttons {
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 12px;
+
+    margin-top: 8px;
+}
+
+
+.modal-buttons button {
+    min-height: 44px;
+
+    padding: 10px 15px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.modal-buttons button:first-child {
+    background: #008080;
+
+    color: #ffffff;
+}
+
+
+.modal-buttons button:first-child:hover {
+    background: #3a0ca3;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 7px 15px rgba(58, 12, 163, 0.18);
+}
+
+
+.modal-buttons button:last-child {
+    background: #f1f5f9;
+
+    color: #475569;
+}
+
+
+.modal-buttons button:last-child:hover {
+    background: #e2e8f0;
+
+    transform: translateY(-2px);
+}
+
+
+.modal-buttons button:active {
+    transform: scale(0.97);
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes profileFadeUp {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+
+}
+
+
+@keyframes modalFade {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+
+}
+
+
+@keyframes modalSlide {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(20px)
+            scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .faculty-profile-container {
+        grid-template-columns: 1fr;
+
+        padding:
+            35px
+            25px
+            60px;
+    }
+
+
+    .faculty-profile-card {
+        max-width: 600px;
+
+        width: 100%;
+
+        margin: 0 auto;
+    }
+
+
+    .faculty-stats-card {
+        width: 100%;
+
+        box-sizing: border-box;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .faculty-profile-container {
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 18px;
+
+        padding:
+            25px
+            16px
+            45px;
+    }
+
+
+    .faculty-profile-card {
+        padding: 30px 20px;
+
+        border-radius: 16px;
+    }
+
+
+    .faculty-profile-icon {
+        font-size: 90px;
+    }
+
+
+    .faculty-profile-card h2 {
+        font-size: 22px;
+    }
+
+
+    .faculty-profile-details div {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 5px;
+    }
+
+
+    .faculty-profile-details span {
+        max-width: 100%;
+
+        text-align: left;
+    }
+
+
+    .faculty-stats-card {
+        padding: 25px 20px;
+
+        border-radius: 16px;
+    }
+
+
+    .faculty-stats-grid {
+        grid-template-columns: 1fr;
+
+        gap: 12px;
+    }
+
+
+    .faculty-profile-buttons {
+        grid-template-columns: 1fr;
+
+        gap: 10px;
+    }
+
+
+    .edit-modal {
+        padding: 27px 20px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .faculty-profile-container {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+
+    .faculty-profile-card,
+    .faculty-stats-card {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+
+    .faculty-profile-icon {
+        font-size: 80px;
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .faculty-profile-container *,
+    .faculty-profile-container *::before,
+    .faculty-profile-container *::after {
+        animation: none !important;
+
+        transition: none !important;
+    }
+
+}

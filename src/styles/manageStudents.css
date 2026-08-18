@@ -1,0 +1,753 @@
+/* =========================================================
+   CAMPUSDOCS - MANAGE STUDENTS
+   Modern Admin Management UI
+========================================================= */
+
+.manage-page {
+    min-height: 100vh;
+    box-sizing: border-box;
+
+    padding: 45px max(20px, 5vw) 60px;
+
+    background:
+        radial-gradient(
+            circle at 90% 0%,
+            rgba(0, 245, 212, 0.07),
+            transparent 25%
+        ),
+        #f7fafc;
+
+    color: #0a2540;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.manage-page h1 {
+    margin: 0 0 28px;
+
+    font-size: 32px;
+    font-weight: 800;
+
+    color: #0a2540;
+
+    letter-spacing: -0.7px;
+
+    animation: fadeDown 0.45s ease;
+}
+
+.manage-page h1::after {
+    content: "";
+
+    display: block;
+
+    width: 45px;
+    height: 4px;
+
+    margin-top: 10px;
+
+    border-radius: 10px;
+
+    background: linear-gradient(
+        90deg,
+        #3a0ca3,
+        #008080,
+        #00f5d4
+    );
+}
+
+
+/* =========================================================
+   SEARCH BAR
+========================================================= */
+
+.search-input {
+    width: min(420px, 100%);
+
+    box-sizing: border-box;
+
+    padding: 14px 17px;
+
+    margin-bottom: 25px;
+
+    border: 1px solid #dce3ec;
+
+    border-radius: 11px;
+
+    background: #ffffff;
+
+    color: #0a2540;
+
+    font-family: inherit;
+
+    font-size: 15px;
+
+    outline: none;
+
+    box-shadow:
+        0 4px 14px rgba(10, 37, 64, 0.04);
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        transform 0.25s ease;
+}
+
+.search-input::placeholder {
+    color: #94a3b8;
+}
+
+.search-input:focus {
+    border-color: #3a0ca3;
+
+    box-shadow:
+        0 0 0 4px rgba(58, 12, 163, 0.08);
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   TABLE CONTAINER
+========================================================= */
+
+/*
+   The wrapper isn't in the JSX, so we use the table itself
+   as the main desktop surface.
+*/
+
+table {
+    width: 100%;
+
+    border-collapse: separate;
+
+    border-spacing: 0;
+
+    background: #ffffff;
+
+    border: 1px solid #e7ecf2;
+
+    border-radius: 16px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 8px 30px rgba(10, 37, 64, 0.06);
+
+    animation: tableAppear 0.5s ease;
+}
+
+
+/* =========================================================
+   TABLE HEADER
+========================================================= */
+
+th {
+    padding: 17px 15px;
+
+    background: #0a2540;
+
+    color: #ffffff;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.5px;
+
+    white-space: nowrap;
+}
+
+
+/* Subtle cyan line under header */
+
+thead tr {
+    border-bottom: 3px solid #00f5d4;
+}
+
+
+/* =========================================================
+   TABLE CELLS
+========================================================= */
+
+th,
+td {
+    text-align: center;
+}
+
+td {
+    padding: 16px 14px;
+
+    border-bottom: 1px solid #edf1f5;
+
+    color: #475569;
+
+    font-size: 14px;
+
+    transition:
+        background 0.2s ease;
+}
+
+
+/* Student name */
+
+td:nth-child(2) {
+    color: #0a2540;
+
+    font-weight: 700;
+}
+
+
+/* Email */
+
+td:nth-child(3) {
+    color: #64748b;
+}
+
+
+/* Last row */
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* Row hover */
+
+tbody tr {
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+}
+
+tbody tr:hover {
+    background: #f8faff;
+}
+
+tbody tr:hover td {
+    background: #f8faff;
+}
+
+
+/* =========================================================
+   DEPARTMENT BADGE
+========================================================= */
+
+td:nth-child(4) {
+    font-weight: 700;
+    color: #3a0ca3;
+}
+
+
+/* =========================================================
+   SEMESTER
+========================================================= */
+
+td:nth-child(5) {
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   ACTION BUTTONS
+========================================================= */
+
+.edit-btn,
+.delete-btn {
+    border: none;
+
+    padding: 9px 14px;
+
+    border-radius: 8px;
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+
+/* Edit */
+
+.edit-btn {
+    margin-right: 7px;
+
+    background: #3a0ca3;
+
+    color: #ffffff;
+
+    box-shadow:
+        0 4px 10px rgba(58, 12, 163, 0.18);
+}
+
+.edit-btn:hover {
+    background: #2d087e;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 7px 15px rgba(58, 12, 163, 0.25);
+}
+
+
+/* Delete */
+
+.delete-btn {
+    background: #fff1f1;
+
+    color: #e05252;
+
+    border: 1px solid #ffd7d7;
+}
+
+.delete-btn:hover {
+    background: #ff6b6b;
+
+    color: #ffffff;
+
+    border-color: #ff6b6b;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 6px 14px rgba(255, 107, 107, 0.2);
+}
+
+
+.edit-btn:active,
+.delete-btn:active {
+    transform: scale(0.96);
+}
+
+
+/* =========================================================
+   MODAL OVERLAY
+========================================================= */
+
+.modal-overlay {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 1000;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 20px;
+
+    box-sizing: border-box;
+
+    background:
+        rgba(10, 37, 64, 0.55);
+
+    backdrop-filter: blur(6px);
+
+    animation: overlayAppear 0.2s ease;
+}
+
+
+/* =========================================================
+   EDIT MODAL
+========================================================= */
+
+.modal {
+    width: min(440px, 100%);
+
+    box-sizing: border-box;
+
+    padding: 30px;
+
+    background: #ffffff;
+
+    border: 1px solid #edf1f5;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 25px 70px rgba(10, 37, 64, 0.22);
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+
+    animation: modalAppear 0.3s ease;
+}
+
+
+/* Modal heading */
+
+.modal h2 {
+    margin: 0 0 8px;
+
+    color: #0a2540;
+
+    text-align: center;
+
+    font-size: 23px;
+
+    font-weight: 800;
+}
+
+
+/* Cyan accent */
+
+.modal h2::after {
+    content: "";
+
+    display: block;
+
+    width: 35px;
+    height: 3px;
+
+    margin: 8px auto 0;
+
+    border-radius: 10px;
+
+    background: #00f5d4;
+}
+
+
+/* =========================================================
+   MODAL INPUTS
+========================================================= */
+
+.modal input,
+.modal select {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 13px 14px;
+
+    border: 1px solid #dce3ec;
+
+    border-radius: 9px;
+
+    background: #fdfefe;
+
+    color: #0a2540;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.modal input::placeholder {
+    color: #94a3b8;
+}
+
+.modal input:focus,
+.modal select:focus {
+    border-color: #3a0ca3;
+
+    box-shadow:
+        0 0 0 4px rgba(58, 12, 163, 0.08);
+}
+
+
+/* =========================================================
+   MODAL BUTTONS
+========================================================= */
+
+.modal-buttons {
+    display: flex;
+
+    gap: 12px;
+
+    margin-top: 8px;
+}
+
+
+.modal-buttons button {
+    flex: 1;
+
+    min-height: 45px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+/* Save */
+
+.modal-buttons .edit-btn {
+    margin-right: 0;
+
+    background: #3a0ca3;
+
+    color: #ffffff;
+}
+
+.modal-buttons .edit-btn:hover {
+    background: #2d087e;
+
+    transform: translateY(-2px);
+}
+
+
+/* Cancel */
+
+.modal-buttons .delete-btn {
+    background: #f1f5f9;
+
+    color: #475569;
+
+    border: 1px solid #e2e8f0;
+}
+
+.modal-buttons .delete-btn:hover {
+    background: #e2e8f0;
+
+    color: #0a2540;
+
+    border-color: #e2e8f0;
+
+    transform: translateY(-2px);
+
+    box-shadow: none;
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes fadeDown {
+
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+@keyframes tableAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+@keyframes overlayAppear {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+
+}
+
+
+@keyframes modalAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.96);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .manage-page {
+        padding:
+            35px
+            20px
+            50px;
+    }
+
+    table {
+        display: block;
+
+        overflow-x: auto;
+
+        white-space: nowrap;
+    }
+
+    th,
+    td {
+        padding: 14px 12px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .manage-page {
+        padding:
+            28px
+            14px
+            45px;
+    }
+
+
+    .manage-page h1 {
+        font-size: 27px;
+
+        margin-bottom: 22px;
+    }
+
+
+    .search-input {
+        width: 100%;
+
+        margin-bottom: 20px;
+    }
+
+
+    table {
+        border-radius: 12px;
+
+        font-size: 13px;
+    }
+
+
+    th {
+        padding: 14px 12px;
+
+        font-size: 11px;
+    }
+
+
+    td {
+        padding: 14px 12px;
+
+        font-size: 13px;
+    }
+
+
+    .edit-btn,
+    .delete-btn {
+        padding: 8px 11px;
+
+        font-size: 12px;
+    }
+
+
+    .modal {
+        padding: 24px 20px;
+
+        border-radius: 15px;
+    }
+
+
+    .modal h2 {
+        font-size: 21px;
+    }
+
+
+    .modal-buttons {
+        flex-direction: column;
+    }
+
+
+    .modal-buttons button {
+        width: 100%;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .manage-page {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+
+    .manage-page h1 {
+        font-size: 24px;
+    }
+
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .manage-page *,
+    .manage-page *::before,
+    .manage-page *::after {
+        animation: none !important;
+
+        transition: none !important;
+    }
+
+}

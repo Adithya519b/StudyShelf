@@ -1,0 +1,387 @@
+/* =========================
+   MANAGE FACULTY PAGE
+========================= */
+
+.manage-page {
+    min-height: 100vh;
+    padding: 40px;
+    background: #f5f7fb;
+    box-sizing: border-box;
+}
+
+/* Page Heading */
+
+.manage-page h1 {
+    margin: 0 0 25px;
+    color: #1e293b;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+/* =========================
+   SEARCH
+========================= */
+
+.search-input {
+    width: 350px;
+    max-width: 100%;
+    padding: 13px 16px;
+    margin-bottom: 25px;
+
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+
+    background: #ffffff;
+    color: #1e293b;
+
+    font-size: 15px;
+
+    outline: none;
+    transition: 0.25s;
+    box-sizing: border-box;
+}
+
+.search-input::placeholder {
+    color: #94a3b8;
+}
+
+.search-input:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+/* =========================
+   TABLE CONTAINER
+========================= */
+
+.manage-page table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+
+    background: #ffffff;
+
+    border-radius: 14px;
+    overflow: hidden;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
+}
+
+/* =========================
+   TABLE HEADER
+========================= */
+
+.manage-page th {
+    background: #2563eb;
+    color: #ffffff;
+
+    padding: 16px 15px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    text-align: center;
+    white-space: nowrap;
+}
+
+/* =========================
+   TABLE BODY
+========================= */
+
+.manage-page td {
+    padding: 16px 15px;
+
+    color: #475569;
+    font-size: 14px;
+
+    text-align: center;
+
+    border-bottom: 1px solid #eef2f7;
+}
+
+/* Row Hover */
+
+.manage-page tbody tr {
+    transition: 0.2s;
+}
+
+.manage-page tbody tr:hover {
+    background: #f8fafc;
+}
+
+/* Remove border from last row */
+
+.manage-page tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* =========================
+   EDIT BUTTON
+========================= */
+
+.edit-btn {
+    background: #f59e0b;
+    color: #ffffff;
+
+    border: none;
+    padding: 9px 16px;
+
+    border-radius: 7px;
+
+    cursor: pointer;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    margin-right: 8px;
+
+    transition: 0.25s;
+}
+
+.edit-btn:hover {
+    background: #d97706;
+    transform: translateY(-1px);
+}
+
+/* =========================
+   DELETE BUTTON
+========================= */
+
+.delete-btn {
+    background: #dc2626;
+    color: #ffffff;
+
+    border: none;
+    padding: 9px 16px;
+
+    border-radius: 7px;
+
+    cursor: pointer;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition: 0.25s;
+}
+
+.delete-btn:hover {
+    background: #b91c1c;
+    transform: translateY(-1px);
+}
+
+/* =========================
+   MODAL OVERLAY
+========================= */
+
+.modal-overlay {
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(15, 23, 42, 0.55);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+
+    z-index: 1000;
+
+    backdrop-filter: blur(3px);
+}
+
+/* =========================
+   MODAL
+========================= */
+
+.modal {
+    width: 420px;
+    max-width: 100%;
+
+    background: #ffffff;
+
+    padding: 30px;
+
+    border-radius: 16px;
+
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 15px;
+
+    box-sizing: border-box;
+
+    animation: popup 0.25s ease;
+}
+
+/* Modal Heading */
+
+.modal h2 {
+    text-align: center;
+
+    margin: 0 0 10px;
+
+    color: #1e293b;
+
+    font-size: 24px;
+}
+
+/* =========================
+   MODAL INPUTS
+========================= */
+
+.modal input,
+.modal select {
+    width: 100%;
+
+    padding: 13px 14px;
+
+    border: 1px solid #d1d5db;
+
+    border-radius: 9px;
+
+    font-size: 15px;
+
+    color: #1e293b;
+
+    background: #ffffff;
+
+    outline: none;
+
+    box-sizing: border-box;
+
+    transition: 0.25s;
+}
+
+.modal input:focus,
+.modal select:focus {
+    border-color: #2563eb;
+
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* =========================
+   MODAL BUTTONS
+========================= */
+
+.modal-buttons {
+    display: flex;
+
+    justify-content: flex-end;
+
+    gap: 12px;
+
+    margin-top: 10px;
+}
+
+.modal-buttons button {
+    min-width: 100px;
+
+    padding: 11px 18px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    transition: 0.25s;
+}
+
+.modal-buttons .edit-btn {
+    margin-right: 0;
+}
+
+.modal-buttons .delete-btn {
+    background: #64748b;
+}
+
+.modal-buttons .delete-btn:hover {
+    background: #475569;
+}
+
+/* =========================
+   MODAL ANIMATION
+========================= */
+
+@keyframes popup {
+
+    from {
+        transform: scale(0.9) translateY(10px);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1) translateY(0);
+        opacity: 1;
+    }
+
+}
+
+/* =========================
+   RESPONSIVE TABLE
+========================= */
+
+@media (max-width: 900px) {
+
+    .manage-page {
+        padding: 25px;
+    }
+
+    .manage-page table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .manage-page {
+        padding: 20px 15px;
+    }
+
+    .manage-page h1 {
+        font-size: 26px;
+    }
+
+    .search-input {
+        width: 100%;
+    }
+
+    .manage-page th,
+    .manage-page td {
+        padding: 12px 10px;
+    }
+
+    .edit-btn,
+    .delete-btn {
+        padding: 8px 12px;
+        font-size: 13px;
+    }
+
+    .modal {
+        padding: 22px;
+    }
+
+    .modal-buttons {
+        flex-direction: column;
+    }
+
+    .modal-buttons button {
+        width: 100%;
+    }
+
+}

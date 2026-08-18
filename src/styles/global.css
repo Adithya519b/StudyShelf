@@ -1,0 +1,323 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#f8fafc;
+}
+/* =========================================================
+   FACULTY REGISTRATION
+   CampusDocs - Modern UI
+========================================================= */
+
+.faculty-theme select {
+    width: 100%;
+    box-sizing: border-box;
+
+    height: 48px;
+
+    padding: 0 14px;
+
+    background: #f8fafc;
+
+    border: 1px solid #dbe4ec;
+
+    border-radius: 10px;
+
+    color: #334155;
+
+    font-family: inherit;
+
+    font-size: 15px;
+
+    cursor: pointer;
+
+    outline: none;
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease,
+        transform 0.2s ease;
+}
+
+
+/* Select hover */
+
+.faculty-theme select:hover {
+    border-color: #99d6d6;
+}
+
+
+/* Select focus */
+
+.faculty-theme select:focus {
+    background: #ffffff;
+
+    border-color: #008080;
+
+    box-shadow:
+        0 0 0 4px rgba(0, 128, 128, 0.10);
+
+    transform: translateY(-1px);
+}
+
+
+/* Select option */
+
+.faculty-theme select option {
+    color: #334155;
+
+    background: #ffffff;
+}
+
+
+/* =========================================================
+   FACULTY REGISTER BUTTON
+========================================================= */
+
+.faculty-theme button[type="submit"] {
+
+    width: 100%;
+
+    height: 50px;
+
+    margin-top: 5px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #008080;
+
+    color: #ffffff;
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.2px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 6px 16px rgba(0, 128, 128, 0.18);
+
+    transition:
+        background 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+/* Hover */
+
+.faculty-theme button[type="submit"]:hover {
+
+    background: #3a0ca3;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 22px rgba(58, 12, 163, 0.22);
+}
+
+
+/* Click */
+
+.faculty-theme button[type="submit"]:active {
+
+    transform: scale(0.98);
+
+    box-shadow:
+        0 4px 10px rgba(58, 12, 163, 0.15);
+}
+
+
+/* Keyboard focus */
+
+.faculty-theme button[type="submit"]:focus-visible {
+
+    outline: none;
+
+    box-shadow:
+        0 0 0 4px rgba(0, 245, 212, 0.25),
+        0 8px 20px rgba(0, 128, 128, 0.2);
+}
+
+
+/* =========================================================
+   REGISTRATION INPUT SPACING
+========================================================= */
+
+.faculty-theme input {
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    height: 48px;
+
+    padding: 0 14px;
+
+    border-radius: 10px;
+
+}
+
+
+/* =========================================================
+   REGISTRATION LINK
+========================================================= */
+
+.faculty-theme .register-text {
+
+    margin-top: 5px;
+
+    margin-bottom: 0;
+
+    color: #64748b;
+
+    font-size: 14px;
+
+    text-align: center;
+}
+
+
+.faculty-theme .register-text a {
+
+    color: #008080;
+
+    font-weight: 700;
+
+    text-decoration: none;
+
+    transition:
+        color 0.2s ease;
+}
+
+
+.faculty-theme .register-text a:hover {
+
+    color: #3a0ca3;
+
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   REGISTRATION CARD
+========================================================= */
+
+.faculty-theme {
+
+    max-width: 420px;
+
+    box-sizing: border-box;
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .faculty-theme {
+
+        width: calc(100vw - 32px);
+
+        padding: 30px 22px;
+    }
+
+
+    .faculty-theme h1 {
+
+        font-size: 23px;
+
+        line-height: 1.3;
+    }
+
+
+    .faculty-theme h2 {
+
+        font-size: 15px;
+
+    }
+
+
+    .faculty-theme input,
+    .faculty-theme select {
+
+        height: 46px;
+
+        font-size: 14px;
+
+    }
+
+
+    .faculty-theme button[type="submit"] {
+
+        height: 48px;
+
+        font-size: 15px;
+
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .faculty-theme {
+
+        width: calc(100vw - 24px);
+
+        padding: 26px 18px;
+
+    }
+
+
+    .faculty-theme h1 {
+
+        font-size: 21px;
+
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .faculty-theme,
+    .faculty-theme input,
+    .faculty-theme select,
+    .faculty-theme button,
+    .faculty-theme a {
+
+        transition: none;
+
+        animation: none;
+
+    }
+
+}
