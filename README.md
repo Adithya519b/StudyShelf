@@ -7,6 +7,8 @@ A full-stack web application for securely downloading digital PDF books, documen
 * **User Authentication:** Secure registration and login.
 * **Catalog Browsing:** Search, filter, and view details of digital PDF products.
 
+# **[Demo ](https://adithya519b.github.io/StudyShelf/)**
+
 ## Tech Stack
 
 * **Frontend:** React</inline> (Vite), React Router, Tailwind CSS, Axios.
